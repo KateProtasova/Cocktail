@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  Cocktail.swift
 //  Cocktail
 //
 //  Created by Екатерина Протасова on 16.04.2020.
@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class Drinks: Codable {
+   var drinks: [Cocktail] = []
+}
+
+class Cocktail: Codable {
+    let idDrink: String
+    let strDrink: String
+}
