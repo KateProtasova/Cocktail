@@ -22,6 +22,11 @@
 		B6319A3E24488062006569D3 /* SearchDrinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6319A3D24488062006569D3 /* SearchDrinksViewModel.swift */; };
 		B6319A40244884D4006569D3 /* CocktailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6319A3F244884D4006569D3 /* CocktailsRequest.swift */; };
 		B6319A4224488512006569D3 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6319A4124488512006569D3 /* APIRequest.swift */; };
+		B64A68922451899500C1542D /* DetailsDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A68912451899500C1542D /* DetailsDrinkViewController.swift */; };
+		B64A6896245189F200C1542D /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A6895245189F200C1542D /* Storyboarded.swift */; };
+		B64A689924518A3900C1542D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A689824518A3900C1542D /* Coordinator.swift */; };
+		B64A689C24518A7000C1542D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A689B24518A7000C1542D /* MainCoordinator.swift */; };
+		B64A689E24518C9A00C1542D /* DetailsDrinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A689D24518C9A00C1542D /* DetailsDrinkCoordinator.swift */; };
 		BFD9380567CD50385105D5BA /* Pods_Cocktail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C53FEAF85C7B29D526A436 /* Pods_Cocktail.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +50,11 @@
 		B6319A3D24488062006569D3 /* SearchDrinksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDrinksViewModel.swift; sourceTree = "<group>"; };
 		B6319A3F244884D4006569D3 /* CocktailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsRequest.swift; sourceTree = "<group>"; };
 		B6319A4124488512006569D3 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		B64A68912451899500C1542D /* DetailsDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDrinkViewController.swift; sourceTree = "<group>"; };
+		B64A6895245189F200C1542D /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		B64A689824518A3900C1542D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B64A689B24518A7000C1542D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B64A689D24518C9A00C1542D /* DetailsDrinkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDrinkCoordinator.swift; sourceTree = "<group>"; };
 		FA83D15E37E5272C30A47473 /* Pods-Cocktail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocktail.debug.xcconfig"; path = "Target Support Files/Pods-Cocktail/Pods-Cocktail.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +102,9 @@
 			children = (
 				B6319A16244864B7006569D3 /* AppDelegate.swift */,
 				B6319A18244864B7006569D3 /* SceneDelegate.swift */,
+				B64A689A24518A3C00C1542D /* Coordinators */,
+				B64A689724518A0F00C1542D /* Protocols */,
+				B64A6894245189B900C1542D /* Details Drink */,
 				B6319A3C24487FC7006569D3 /* Search Drink */,
 				B6319A3124487B10006569D3 /* Models */,
 				B6319A2E24487ACF006569D3 /* Managers */,
@@ -148,6 +161,40 @@
 				B6319A3B24487F8B006569D3 /* ViewModel */,
 			);
 			path = "Search Drink";
+			sourceTree = "<group>";
+		};
+		B64A6893245189A400C1542D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B64A68912451899500C1542D /* DetailsDrinkViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B64A6894245189B900C1542D /* Details Drink */ = {
+			isa = PBXGroup;
+			children = (
+				B64A6893245189A400C1542D /* View */,
+			);
+			path = "Details Drink";
+			sourceTree = "<group>";
+		};
+		B64A689724518A0F00C1542D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B64A6895245189F200C1542D /* Storyboarded.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B64A689A24518A3C00C1542D /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				B64A689824518A3900C1542D /* Coordinator.swift */,
+				B64A689B24518A7000C1542D /* MainCoordinator.swift */,
+				B64A689D24518C9A00C1542D /* DetailsDrinkCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		C999269A5B1DDE22DBB987EA /* Frameworks */ = {
@@ -274,16 +321,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64A68922451899500C1542D /* DetailsDrinkViewController.swift in Sources */,
 				B6319A3324487CE2006569D3 /* SearchDrinksViewController.swift in Sources */,
 				B6319A2B24486A29006569D3 /* NetworkManager.swift in Sources */,
 				B6319A3724487D64006569D3 /* CocktailTableViewCell.swift in Sources */,
 				B6319A17244864B7006569D3 /* AppDelegate.swift in Sources */,
+				B64A6896245189F200C1542D /* Storyboarded.swift in Sources */,
+				B64A689924518A3900C1542D /* Coordinator.swift in Sources */,
 				B6319A3A24487ED9006569D3 /* CocktailViewModel.swift in Sources */,
 				B6319A2D24487990006569D3 /* APIClient.swift in Sources */,
 				B6319A3E24488062006569D3 /* SearchDrinksViewModel.swift in Sources */,
+				B64A689E24518C9A00C1542D /* DetailsDrinkCoordinator.swift in Sources */,
 				B6319A4224488512006569D3 /* APIRequest.swift in Sources */,
 				B6319A40244884D4006569D3 /* CocktailsRequest.swift in Sources */,
 				B6319A19244864B7006569D3 /* SceneDelegate.swift in Sources */,
+				B64A689C24518A7000C1542D /* MainCoordinator.swift in Sources */,
 				B6319A3024487AFA006569D3 /* Cocktail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

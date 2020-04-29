@@ -10,10 +10,11 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class SearchDrinksViewController: UIViewController {
+class SearchDrinksViewController: UIViewController, Storyboarded {
     private let disposeBag = DisposeBag()
     private var viewModel: SearchDrinksViewModel!
     private let searchController = UISearchController(searchResultsController: nil)
+    weak var coordinator: MainCoordinator?
 
     @IBOutlet private var tableView: UITableView!
 
@@ -39,6 +40,7 @@ class SearchDrinksViewController: UIViewController {
         .disposed(by: disposeBag)
         tableView.rx.modelSelected(Cocktail.self)
                    .subscribe(onNext:  { value in
+                    self.coordinator?.detailsDrinkSubscription(drink: value)
                       print(value)
                    })
                    .disposed(by: disposeBag)
