@@ -24,7 +24,7 @@ class DetailsDrinkCoordinator: Coordinator {
     func start() {
         let vc = DetailsDrinkViewController.instantiate()
         vc.coordinator = self
-        vc.cocktail = cocktail
+        vc.viewModel = DetailsDrinkViewModel(cocktail: cocktail!)
         navigationController.pushViewController(vc, animated: true)
     }
     

@@ -15,4 +15,7 @@ class Drinks: Codable {
 class Cocktail: Codable {
     let idDrink: String
     let strDrink: String
+    let strInstructions: String
+    let strDrinkThumb: String
+
 }

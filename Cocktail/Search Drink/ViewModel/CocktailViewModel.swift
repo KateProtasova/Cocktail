@@ -9,14 +9,10 @@
 import Foundation
 
 class CocktailViewModel {
-
     let name: String
-
+    
     init(cocktail: Cocktail) {
         self.name = cocktail.strDrink
-    }
-    init(cocktail: String) {
-        self.name = cocktail
     }
 }
 

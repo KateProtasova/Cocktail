@@ -24,13 +24,6 @@ class NetworkManager {
         self.apiClient = apiClient
     }
 
-//    var lastText = ""
-//
-//    func searchCharacters(text: String, page: String? = nil) -> PublishSubject<[Character]> {
-//        lastText = text
-//        return searchCocktails(text: text)
-//    }
-
      func searchCocktails(text: String, page: String? = nil) -> PublishSubject<[Cocktail]> {
 
         let request = CocktailsRequest(searchText: text, page: page)
@@ -50,6 +43,14 @@ class NetworkManager {
         }).disposed(by: self.disposeBag)
 
         return cocktails
+    }
+
+    func showImageForUrl(url: String) -> Observable<UIImage?> {
+        return RxAlamofire
+            .requestData(.get, url)
+            .map({ (response,data) -> UIImage? in
+                return UIImage(data: data)
+            })
     }
 }
 
