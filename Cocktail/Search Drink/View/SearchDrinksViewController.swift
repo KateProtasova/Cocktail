@@ -17,24 +17,25 @@ class SearchDrinksViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
 
     @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var infoLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         viewModel = SearchDrinksViewModel()
-
         setupTableView()
         setupSearchBar()
-
         bindSearchBar()
         bindTableView()
+        showInfoMessage()
     }
 
     // MARK: - Binding
 
     func bindTableView() {
-        viewModel.result
+        viewModel.result.asObservable()
             .bind(to: tableView.rx.items(cellIdentifier: "CocktailTableViewCell", cellType: CocktailTableViewCell.self)) {(index, cocktail: Cocktail, cell) in
+                self.infoLabel.isHidden = true
+                self.tableView.isHidden = false
                 cell.viewModel = CocktailViewModel(cocktail:cocktail)
         }
         .disposed(by: disposeBag)
@@ -54,6 +55,16 @@ class SearchDrinksViewController: UIViewController, Storyboarded {
             .disposed(by: disposeBag)
     }
 
+    func showInfoMessage(){
+           viewModel.infoMessage.asDriver(onErrorJustReturn: "")
+               .drive(onNext: {  errorString in
+                   self.infoLabel.isHidden = false
+                   self.tableView.isHidden = true
+                   self.infoLabel.text = errorString
+               })
+           .disposed(by: disposeBag)
+       }
+
     // MARK: - UI Setup
 
     func setupSearchBar() {
@@ -70,5 +81,4 @@ class SearchDrinksViewController: UIViewController, Storyboarded {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
-
 }

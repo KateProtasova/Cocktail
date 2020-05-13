@@ -14,8 +14,10 @@ class APIClient {
     func send<T: Codable>(urlRequest: URLRequest) -> Observable<T> {
         return Observable<T>.create { observer in
             let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                if let error = error {
+                    return observer.onError(error)
+                }
                 do {
-                    print(data)
                    let model: T = try JSONDecoder().decode(T.self, from: data ?? Data())
                     print(model)
                     observer.onNext(model)

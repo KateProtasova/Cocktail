@@ -121,8 +121,8 @@
 		B6319A2E24487ACF006569D3 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				B6319A2C24487990006569D3 /* APIClient.swift */,
 				B6319A2A24486A29006569D3 /* NetworkManager.swift */,
+				B6319A2C24487990006569D3 /* APIClient.swift */,
 				B6319A4124488512006569D3 /* APIRequest.swift */,
 				B6319A3F244884D4006569D3 /* CocktailsRequest.swift */,
 			);
@@ -150,8 +150,8 @@
 		B6319A3B24487F8B006569D3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B6319A3924487ED9006569D3 /* CocktailViewModel.swift */,
 				B6319A3D24488062006569D3 /* SearchDrinksViewModel.swift */,
+				B6319A3924487ED9006569D3 /* CocktailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

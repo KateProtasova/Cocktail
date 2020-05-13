@@ -26,6 +26,10 @@ class DetailsDrinkViewController: UIViewController, Storyboarded {
         setupNavBar()
     }
 
+    deinit {
+        print("deinit")
+    }
+
     func bind() {
         viewModel.title
             .bind(to: titleLabel.rx.text)
@@ -35,7 +39,8 @@ class DetailsDrinkViewController: UIViewController, Storyboarded {
             .bind(to: instructionsLabel.rx.text)
             .disposed(by: disposeBag)
 
-        viewModel.showImage() .bind(to: cocktaillImageView.rx.image)
+        viewModel.showImage()
+            .bind(to: cocktaillImageView.rx.image)
             .disposed(by: disposeBag)
     }
 
